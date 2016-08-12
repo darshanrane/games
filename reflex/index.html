@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reflex</title>
+<style>
+	* { margin: 0; padding: 0; }
+	
+	*:first-child+html #page {position:relative;}/*ie7*/
+	* html #page{position:relative;}/*ie6*/
+	
+	#content_container{display:table-cell;vertical-align: middle;}
+	*:first-child+html #content_container{position:absolute;top:50%;}/*ie7*/
+	* html #content_container{position:absolute;top:50%;}/*ie6*/
+	
+	*:first-child+html #content{position:relative;top:-50%;}/*ie7*/
+	* html #content{position:relative;top:-50%;}/*ie6*/
+	
+	html,body { 
+		height:100%;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:2em;
+		text-align:center;
+		/*
+		#fd7c2a
+		#efb62b
+		#9aca27
+		#3cc16e
+		#169998
+		#229dee
+		#6e3cc1
+		*/
+	}
+	#page{
+		display:table;overflow:hidden;margin:0px auto;
+		height:100%;width:100%;
+		color:#FFFFFF;
+	}
+	
+</style>
+<script>
+	var hitInterval;
+	var timeInterval = 0;
+	var timeArr = new Array();
+	var hexDigits = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
+	
+	function rgb2hex(rgb) {
+	 rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	 return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+	}	
+	function hex(x) {
+	  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+	 }
+
+	window.addEventListener("click", checkClick);
+	
+	function onLoad()
+	{
+		document.body.style.backgroundColor = "#9aca27";
+		document.getElementById("content").innerHTML = 'HIT BLUE';
+		setTimeout(changeBg, Math.random() * 5000);
+	}
+	function checkClick()
+	{
+		var col = rgb2hex(document.body.style.backgroundColor);
+		
+		switch(col)
+		{
+			case "#9aca27":
+				document.getElementById("content").innerHTML = 'NOT YET';
+			break;
+			
+			case "#229dee":
+				clearInterval(hitInterval);
+				if(timeArr.length < 2)
+				{
+					timeArr.push(timeInterval);
+					document.getElementById("content").innerHTML = timeInterval + ' ms';
+					setTimeout(onLoad, 1000);	
+				}
+				else
+				{
+					timeArr.push(timeInterval);
+					var avg = Math.floor((timeArr[0] + timeArr[1] + timeArr[2]) / 3);
+					document.getElementById("content").innerHTML = 'Average \n' + avg + ' ms';		
+					document.body.style.backgroundColor = "#fd7c2a";	
+				}
+				timeInterval = 0;
+			break;
+			case "#fd7c2a":
+				timeArr = [];
+				onLoad();
+			break;
+		}
+	}
+	function checkReactionTime()
+	{
+		hitInterval = setInterval(function(){
+			timeInterval++;
+		},1);
+	}
+	function changeBg()
+	{
+		document.body.style.backgroundColor = "#229dee";
+		checkReactionTime();
+	}
+	
+</script>
+</head>
+<body onLoad="onLoad();">
+    <div id="page">
+       <div id="content_container">
+               <div id="content">
+                     <p>CLICK ON BLUE</p>
+               </div>
+       </div>
+    </div>
+</body>
+</html>

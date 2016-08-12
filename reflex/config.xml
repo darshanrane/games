@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.welogical.games.reflex"
+        version   = "1.0.0">
+
+    <name>Reflex</name>
+
+    <description>
+        A game to check your reflex action.
+    </description>
+
+    <author href="http://welogical.com" email="welogical@gmail.com">
+        We Logical
+    </author>
+
+    <preference name="orientation"                value="default" />        
+    <preference name="target-device"              value="universal" />      
+    <preference name="fullscreen"                 value="true" />           
+    <preference name="android-minSdkVersion"      value="7" />             
+    <preference name="android-installLocation"    value="auto" />           
+    <preference name="phonegap-version"       value="3.5.0" />
+
+    <icon src="icon.png" />
+    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+</widget>
