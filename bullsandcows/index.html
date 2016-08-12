@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta name="Author" content="Darshan Rane">
+<meta name="description" content="Bulls & Cows, the player has to guess a 4 digit number. All the digits in the number are unique/different. If the matching digits are on the right position they are counted as Bulls. If they are on different positions they are counted as Cows">
+<meta name="KEYWORDS" content="Bulls & Cows, Guess a Number, Games">
+
+<title>Bulls & Cows Game</title>
+
+<link rel="stylesheet" type="text/css" href="css/bullsandcows.css"/>
+
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bullsandcows.js"></script>
+</head>
+
+<body>
+
+<div id="gamePage" class="game"> 
+	<div id="console" class="console">
+    	<div id="centerScreen" class="centerScreen">
+        	<div id="screen1" class="screen1">
+				Its simple number game where<br>the player has to <span style="color:#6a4817">guess a 4 digit number.</span><br>All the digits in the number are <span style="color:#6a4817">unique/different.</span><br><br>If the matching digits are on the right position<br>they are counted as <span style="color:#6a4817">"Bulls".</span><br><br>If they are on different positions<br>they are counted as <span style="color:#6a4817">"Cows".</span>
+            </div>
+            <div id="screen2" class="screen2">
+            	<div class="copy">Guess a 4 digit number.<br>Every digit in number is unique.</div>
+                <div class="scoreboard">
+                	<div id="cows" class="score">0</div>
+                    <div class="scoreiconc"></div>
+                    <div id="bulls" class="score">0</div>
+                    <div class="scoreiconb"></div>
+                </div>
+                <div id="userInput" class="userInput">0000</div>
+                <div id="userPreContainer" class="userPreContainer">
+                </div>
+            </div>
+            <div id="numContainer" class="numContainer">
+            	<div id="num1" class="num">1</div>
+                <div id="num2" class="num">2</div>
+                <div id="num3" class="num">3</div>
+                <div id="num4" class="num">4</div>
+                <div id="num5" class="num">5</div>
+                <div id="num6" class="num">6</div>
+                <div id="num7" class="num">7</div>
+                <div id="num8" class="num">8</div>
+                <div id="num9" class="num">9</div>
+            </div>
+        </div>
+        <div id="playGuessBtn" class="playGuessBtn">
+        	<div id="playBtn"></div>
+            <div id="guessBtn"></div>
+        </div>
+        <div id="resetBtn" class="resetBtn">
+        </div>
+        <div id="clearBtn" class="clearBtn">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

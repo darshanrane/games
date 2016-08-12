@@ -1,0 +1,362 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: Forte;
+  src: url('fonts/FORTE.TTF');
+}
+
+body
+{
+	padding:0;
+	margin:0 auto;
+	background-color:#FFF;
+	font-family:Forte, Verdana, Geneva, sans-serif;
+	font-size:14px;
+	color:#6a4817;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+img{ border:0 none;}
+
+.ui-page {
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden; /* Chrome and Safari */
+	-moz-backface-visibility:hidden; /* Firefox */
+	-ms-backface-visibility:hidden; /* Internet Explorer */
+}
+
+/*240*/
+@media only screen and (min-width: 0px)  and (max-width: 321px) {
+	.game
+	{
+		margin:0 auto;
+		margin-top:50px;
+		width:800px;
+		display:none;
+	}
+}
+
+/*320*/
+@media only screen and (min-width: 321px)  and (max-width: 479px) {
+	.game
+	{
+		margin:0 auto;
+		margin-top:50px;
+		width:320px;
+		display:none;
+	}
+}
+
+/*480*/
+@media only screen and (min-width: 479px)  and (max-width: 799px) {
+	.game
+	{
+		margin:0 auto;
+		margin-top:50px;
+		width:480px;
+	}
+	.console
+	{
+		background:url(../images/480/console.jpg) no-repeat;
+		width:480px;
+		height:210px;
+	}
+	.centerScreen
+	{
+		position:relative;
+		width:263px;
+		height:150px;
+		left:110px;
+		top:25px;
+		/*background-color:#666;*/
+		float:left;
+	}
+	.playGuessBtn
+	{
+		position:relative;
+		left:130px;
+		top:98px;
+		float:left;
+	}
+	
+	.resetBtn
+	{
+		position:relative;
+		left:70px;
+		top:35px;
+		float:left;
+		opacity:0.2;
+		cursor:pointer;
+		background:url(../images/480/reset.png) no-repeat;
+		width:65px;
+		height:21px;
+	}
+	.clearBtn
+	{
+		position:relative;
+		left:20px;
+		top:68px;
+		float:left;
+		opacity:0.2;
+		cursor:pointer;
+		background:url(../images/480/clear.png) no-repeat;
+		width:65px;
+		height:21px;
+	}
+	
+	.numContainer
+	{
+		float:left;
+		width:300px;
+		font-size:20px;
+		opacity:0.2;
+		margin-top:0px;
+		margin-left:-10px;
+	}
+	.num
+	{
+		float:left;
+		width:32px;
+		cursor:pointer;
+		text-align:center;
+	}
+	.screen1
+	{
+		height:150px;
+		font-size:12px;
+		text-align:center;
+		color:#999;
+		line-height:15px;
+	}
+	.screen2
+	{
+		display:none;
+		height:153px;
+	}
+	.copy
+	{
+		padding:2px;
+		width:150px;
+		font-size:11px;
+	}
+	.scoreboard
+	{
+		float:right;
+		width:110px;
+		margin-top:-33px;
+	}
+	.scoreiconb
+	{
+		float:right;
+		width:30px;
+		height:30px;	
+		background:url(../images/480/bull.png) no-repeat;
+	}
+	.scoreiconc
+	{
+		float:right;
+		width:30px;
+		height:30px;	
+		background:url(../images/480/cow.png) no-repeat;
+	}
+	.score
+	{
+		float:right;
+		font-size:25px;
+		width:20px;
+		height:30px;	
+	}
+	.userInput
+	{
+		font-size:30px;	
+		text-align:center;
+		width:263px;
+		height:40px;
+		margin-top:5px;
+	}
+	.userPreContainer
+	{
+		font-size:12px;	
+		width:263px;
+		margin:0 auto;
+	}
+	.userPreInput
+	{
+		float:left;
+		padding-left:15px;
+	}
+	#playBtn
+	{
+		cursor:pointer;
+		background:url(../images/480/play.png) no-repeat;
+		width:50px;
+		height:50px;
+	}
+	#guessBtn
+	{
+		display:none;
+		cursor:pointer;
+		background:url(../images/480/guess.png) no-repeat;
+		width:50px;
+		height:50px;
+	}
+}
+
+/*above 800*/
+@media only screen and (min-width:799px){
+	/* Styles */
+	.game
+	{
+		margin:0 auto;
+		margin-top:60px;
+		width:800px;
+	}
+	
+	.console
+	{
+		background:url(../images/800/console.jpg) no-repeat;
+		width:800px;
+		height:350px;
+	}
+	.centerScreen
+	{
+		position:relative;
+		width:445px;
+		height:255px;
+		left:180px;
+		top:35px;
+		/*background-color:#666;*/
+		float:left;
+	}
+	.playGuessBtn
+	{
+		position:relative;
+		left:220px;
+		top:150px;
+		float:left;
+	}
+	
+	.resetBtn
+	{
+		position:relative;
+		left:140px;
+		top:65px;
+		float:left;
+		opacity:0.2;
+		cursor:pointer;
+		background:url(../images/800/reset.png) no-repeat;
+		width:75px;
+		height:24px;
+	}
+	.clearBtn
+	{
+		position:relative;
+		left:80px;
+		top:110px;
+		float:left;
+		opacity:0.2;
+		cursor:pointer;
+		background:url(../images/800/clear.png) no-repeat;
+		width:76px;
+		height:24px;
+	}
+	
+	.numContainer
+	{
+		float:left;
+		width:440px;
+		font-size:30px;
+		padding-top:5px;
+		padding-left:20px;
+		opacity:0.2;
+	}
+	.num
+	{
+		float:left;
+		width:45px;
+		cursor:pointer;
+		text-align:center;
+	}
+	.screen1
+	{
+		padding: 20px;
+		height:215px;
+		font-size:18px;
+		text-align:center;
+		color:#999;
+	}
+	.screen2
+	{
+		display:none;
+		height:258px;
+	}
+	.copy
+	{
+		padding:10px;
+		width:200px;
+	}
+	.scoreboard
+	{
+		float:right;
+		width: 200px;
+		margin-top:-50px;
+	}
+	.scoreiconb
+	{
+		float:right;
+		width:50px;
+		height:50px;	
+		background:url(../images/800/bull.png) no-repeat;
+	}
+	.scoreiconc
+	{
+		float:right;
+		width:50px;
+		height:50px;	
+		background:url(../images/800/cow.png) no-repeat;
+	}
+	.score
+	{
+		float:right;
+		font-size:40px;
+		width:40px;
+		height:30px;	
+	}
+	.userInput
+	{
+		font-size:60px;	
+		text-align:center;
+		width:445px;
+		margin-top:10px;
+		height:80px;
+	}
+	.userPreContainer
+	{
+		font-size:18px;	
+		width:420px;
+		margin:0 auto;
+	}
+	.userPreInput
+	{
+		float:left;
+		padding-left:15px;
+	}
+	#playBtn
+	{
+		cursor:pointer;
+		background:url(../images/800/play.png) no-repeat;
+		width:83px;
+		height:83px;
+	}
+	#guessBtn
+	{
+		display:none;
+		cursor:pointer;
+		background:url(../images/800/guess.png) no-repeat;
+		width:83px;
+		height:83px;
+	}
+}
+
