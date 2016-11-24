@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Match2</title>
+	<script src="assets/js/phaser.min.js"></script>
+	<script src="assets/js/Boot.js"></script>
+	<script src="assets/js/Preloader.js"></script>
+	<script src="assets/js/MainMenu.js"></script>
+	<script src="assets/js/Game.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+(function() {
+	var game = new Phaser.Game("100%", "100%", Phaser.CANVAS, '');
+	game.state.add('Boot', BasicGame.Boot);
+	game.state.add('Preloader', BasicGame.Preloader);
+	game.state.add('MainMenu', BasicGame.MainMenu);
+	game.state.add('Game', BasicGame.Game);
+	game.state.start('Boot');
+})();
+</script>
+</body>
+</html>
