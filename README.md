@@ -7,5 +7,6 @@ HTML5, CSS3, JavaScript, jQuery
  * Reflex
  * Chasing Lights - js13kgames 2013
  * Falling Blocks - js13kgames 2015
- * Glitch Drive - js 13kgames 2016
-         
+ * Glitch Drive - js 13kgames 2016 - 35th is Desktop Category
+ * Orgami Flappy Bird Clone - Phaser
+ * Smiley Match - WIP
