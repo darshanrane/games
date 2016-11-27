@@ -52,6 +52,7 @@ BasicGame.Game.prototype = {
         this.score = 0;
         this.labelScore = this.game.add.text(20, 20, "0", { font: "30px Arial", fill: "#ffffff" });
 
+        this.jumpSound = this.game.add.audio('jumpsnd'); 
 	},
     update: function(){
 
@@ -66,12 +67,17 @@ BasicGame.Game.prototype = {
         {
             this.jump();
         }
-        this.game.physics.arcade.overlap(this.bird, this.pipes, this.restartGame, null, this);
+        this.game.physics.arcade.overlap(this.bird, this.pipes, this.hitPipe, null, this);
 	},
 	jump: function() {
+        if (this.bird.alive == false)
+            return;
+
         // Add a vertical velocity to the bird
         this.bird.body.velocity.y = -250;
         this.game.add.tween(this.bird).to({angle: -20}, 100).start(); 
+
+        this.jumpSound.play(); 
     },
     addOnePipe: function(x, y) {
         
@@ -98,4 +104,17 @@ BasicGame.Game.prototype = {
         // Start the 'main' state, which restarts the game
         this.game.state.start('Game');
     },
+    hitPipe: function() {
+        if (this.bird.alive == false)
+            return;
+
+        this.bird.alive = false;
+
+        this.game.time.events.remove(this.timer);
+
+        // Go through all the pipes, and stop their movement
+        this.pipes.forEach(function(p){
+            p.body.velocity.x = 0;
+        }, this);
+    }, 
 };
