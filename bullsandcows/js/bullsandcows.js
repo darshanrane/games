@@ -30,7 +30,7 @@ function initGame()
 		
 		$(this).click(function(){	
 		
-			if($("#userInput").text() == "0000")
+			if($("#userInput").text() == "____")
 				$("#userInput").empty();
 				
 			if($("#userInput").text().length < 4)
@@ -44,7 +44,7 @@ function initGame()
 	
 	$("#clearBtn").click(function(){
 		
-		if($("#userInput").text() == "0000")
+		if($("#userInput").text() == "____")
 			$("#userInput").empty();
 	
 		if($("#userInput").text().length > 0)
@@ -56,7 +56,7 @@ function initGame()
 	
 	$("#resetBtn").click(function(){
 		getRandom();
-		$("#userInput").html('0000');
+		$("#userInput").html('____');
 		$("#userPreContainer").html('');
 		tries = 0;
 		$("#cows").html('0');
@@ -115,21 +115,30 @@ function checkNum()
     	userstr += (num[k]);
 	
 	$("#userPreContainer").append("<div class='userPreInput'>"+ userstr +"</div>");
-	$("#userInput").html('');
+	$("#userInput").html('____');
 	num = new Array();
 	
 	if(b == 4)
 	{
-		alert("Thats Right!!!! Its " + nums);
-		$("#userInput").html('0000');
-		$("#cows").html('0');
-		$("#bulls").html('0');
-		tries = 0;
-                num = new Array();
-		$("#userPreContainer").empty();		
-		getRandom();
+		alert("Wo Hoo!! You Win!! Its " + nums);
+		resetGame();
 	}
-	else
-	  tries++;
 
+	tries++;
+	if(tries == 10)
+	{
+		alert("Bad Luck!! You Lose!! Its " + nums);
+		resetGame();
+	}
+	$(".tries").html(tries + '/10');
+}
+function resetGame()
+{
+	$("#userInput").html('____');
+	$("#cows").html('0');
+	$("#bulls").html('0');
+	tries = 0;
+    num = new Array();
+	$("#userPreContainer").empty();		
+	getRandom();
 }

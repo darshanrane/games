@@ -133,7 +133,7 @@ img{ border:0 none;}
 	.screen2
 	{
 		display:none;
-		height:153px;
+		height:155px;
 	}
 	.copy
 	{
@@ -143,9 +143,16 @@ img{ border:0 none;}
 	}
 	.scoreboard
 	{
+		width:240px;
+		height: 35px;
+		margin-top:-5px;
+	}
+	.triesicon
+	{
 		float:right;
-		width:110px;
-		margin-top:-33px;
+		width:30px;
+		height:30px;	
+		background:url(../images/480/turns.png) no-repeat;
 	}
 	.scoreiconb
 	{
@@ -165,7 +172,7 @@ img{ border:0 none;}
 	{
 		float:right;
 		font-size:25px;
-		width:20px;
+		min-width:40px;
 		height:30px;	
 	}
 	.userInput
@@ -181,6 +188,7 @@ img{ border:0 none;}
 		font-size:12px;	
 		width:263px;
 		margin:0 auto;
+		padding-top: 10px;
 	}
 	.userPreInput
 	{
@@ -290,7 +298,7 @@ img{ border:0 none;}
 	.screen2
 	{
 		display:none;
-		height:258px;
+		height:255px;
 	}
 	.copy
 	{
@@ -299,9 +307,16 @@ img{ border:0 none;}
 	}
 	.scoreboard
 	{
+		width: 350px;
+		height: 50px;
+		margin-top:0px;
+	}
+	.triesicon
+	{
 		float:right;
-		width: 200px;
-		margin-top:-50px;
+		width:50px;
+		height:50px;	
+		background:url(../images/800/turns.png) no-repeat;
 	}
 	.scoreiconb
 	{
@@ -321,7 +336,7 @@ img{ border:0 none;}
 	{
 		float:right;
 		font-size:40px;
-		width:40px;
+		min-width:40px;
 		height:30px;	
 	}
 	.userInput
@@ -329,7 +344,7 @@ img{ border:0 none;}
 		font-size:60px;	
 		text-align:center;
 		width:445px;
-		margin-top:10px;
+		margin-top:15px;
 		height:80px;
 	}
 	.userPreContainer
@@ -337,6 +352,7 @@ img{ border:0 none;}
 		font-size:18px;	
 		width:420px;
 		margin:0 auto;
+		padding-top: 50px;
 	}
 	.userPreInput
 	{
