@@ -28,7 +28,7 @@ img{ border:0 none;}
 }
 
 /*240*/
-@media only screen and (min-width: 0px)  and (max-width: 321px) {
+@media only screen and (min-width: 0px)  and (max-width: 479px) {
 	.game
 	{
 		margin:0 auto;
@@ -36,21 +36,25 @@ img{ border:0 none;}
 		width:800px;
 		display:none;
 	}
-}
-
-/*320*/
-@media only screen and (min-width: 321px)  and (max-width: 479px) {
-	.game
+	.nogame
 	{
-		margin:0 auto;
+		margin-left:10%;
 		margin-top:50px;
-		width:320px;
-		display:none;
+		width:80%;
+		text-align: center;
+		display:block;
 	}
 }
 
 /*480*/
 @media only screen and (min-width: 479px)  and (max-width: 799px) {
+	.nogame
+	{
+		margin:0 auto;
+		margin-top:50px;
+		width:80%;
+		display:none;
+	}
 	.game
 	{
 		margin:0 auto;
