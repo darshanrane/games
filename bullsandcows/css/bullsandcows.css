@@ -225,6 +225,14 @@ img{ border:0 none;}
 		margin-top:60px;
 		width:800px;
 	}
+
+	.nogame
+	{
+		margin:0 auto;
+		margin-top:50px;
+		width:80%;
+		display:none;
+	}
 	
 	.console
 	{
