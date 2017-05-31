@@ -37,10 +37,7 @@ function animateColor(){
 	setTimeout(function() { $("#" + cQ[2]).addClass('animated bounceIn'); }, animateTime*3);
 	setTimeout(function() { $("#" + cQ[3]).addClass('animated bounceIn'); }, animateTime*4);
 	setTimeout(function() { 
-		$("#" + cQ[0]).removeClass('animated bounceIn');
-		$("#" + cQ[1]).removeClass('animated bounceIn');
-		$("#" + cQ[2]).removeClass('animated bounceIn');
-		$("#" + cQ[3]).removeClass('animated bounceIn');		
+		removeAnimation();		
 		$(".gameMsg").html("Your Turn");
 		$(".gameMsg").removeClass('blue');
 		$(".gameMsg").addClass('yellow');
@@ -51,6 +48,7 @@ function animateColor(){
 function setListeners() {
 	$('.animate').bind('click', function(e){
 		$(e.target).unbind('click');
+		$(e.target).addClass('animated bounceIn');
 		uArr.push(e.target.id);
 		if(uArr.length == 4)
 		{
@@ -73,10 +71,19 @@ function setListeners() {
 				$(".gameMsg").addClass('blue');
 				uArr = [];
 				$(e.target).unbind('click');
+				removeAnimation();
 				animateColor();
 			});
 		}	
 	});
+}
+
+function removeAnimation()
+{
+	$("#" + cQ[0]).removeClass('animated bounceIn');
+	$("#" + cQ[1]).removeClass('animated bounceIn');
+	$("#" + cQ[2]).removeClass('animated bounceIn');
+	$("#" + cQ[3]).removeClass('animated bounceIn');
 }
 
 function arraysAreIdentical(arr1, arr2){
