@@ -8,7 +8,7 @@ GameDEV.Game.prototype = {
         score = 0;                      
         speed = 0;                     
         updateDelay = 0;                
-        direction = 'right';            
+        direction = 'down';            
         new_direction = null;           
         addNew = false;                 
 
@@ -28,9 +28,26 @@ GameDEV.Game.prototype = {
         scoreTextValue = this.add.text(90, 20, score.toString(), textStyle_Value);
         this.add.text(30, 40, "SPEED: ", textStyle_Key);
         speedTextValue = this.add.text(90, 40, speed.toString(), textStyle_Value);
+    
+        this.input.onTap.add(this.onTap, this);
+    },  
+    onTap: function(pointer) {
+        x = pointer.clientX;
+        y = pointer.clientY;
 
+        //up
+        if(x >= 0 && x <= window.innerWidth && y < (window.innerHeight/3) && direction!='down')
+            new_direction = 'up';
+        //left
+        if(x >= 0 && x <= (window.innerWidth/2) && y >= (window.innerHeight/3) && y < ((window.innerHeight/3) *2) && direction!='right')
+            new_direction = 'left';
+        //right
+        if(x > (window.innerWidth/2) && x <= window.innerWidth && y >= (window.innerHeight/3) && y < ((window.innerHeight/3) *2) && direction!='left')
+            new_direction = 'right';
+        //down
+        if(x >= 0 && x <= window.innerWidth && y > ((window.innerHeight/3) *2) && direction!='up')
+            new_direction = 'down';
     },
-
     update: function() {
 
         if (cursors.right.isDown && direction!='left')
@@ -42,7 +59,7 @@ GameDEV.Game.prototype = {
         else if (cursors.down.isDown && direction!='up')
         {        new_direction = 'down';        }
 
-        speed = Math.min(10, Math.floor(score/5));
+        speed = Math.min(5, Math.floor(score/5));
         speedTextValue.text = '' + speed;
         updateDelay++;
         if (updateDelay % (10 - speed) == 0) {
